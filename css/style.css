@@ -1,0 +1,511 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+
+:root {
+  --cesi-yellow: #ffd200; /* CESI primary yellow */
+  --cesi-black: #000000;
+  --cesi-white: #ffffff;
+  --text-color: #111111;
+  --muted-text: #444444;
+  --bg: #ffffff;
+  --surface: #f7f7f7;
+  --max-w: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text-color);
+  background: var(--bg);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.site-header {
+  background: var(--cesi-white);
+  color: var(--cesi-black);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .container {
+    padding-left: 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0 0.75rem 56px; /* left pad to clear corner logo */
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--cesi-black);
+}
+
+.brand-mark {
+  width: 100px;
+  height: 100px;
+  background: transparent url("../img/CESI_Logo.png") left center/contain no-repeat;
+  border-radius: 0px;
+  display: inline-block;
+}
+
+.brand-name {
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.navbar {
+  background: var(--cesi-yellow);
+}
+
+.navbar nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  display: inline-block;
+  color: var(--cesi-black);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+
+.navbar a:hover,
+.navbar a[aria-current="page"] {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Hero */
+.hero {
+  background: #ffffff;
+  border-bottom: 4px solid var(--cesi-yellow);
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem);
+}
+
+.hero p {
+  margin: 0 0 1.25rem 0;
+  color: var(--muted-text);
+  font-size: 1.125rem;
+}
+
+.cta-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-radius: 8px;
+  padding: 0.8rem 1.1rem;
+  transition: transform 0.08s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.button.primary {
+  background: var(--cesi-yellow);
+  color: var(--cesi-black);
+  box-shadow: 0 6px 14px rgba(255, 210, 0, 0.35);
+}
+
+.button.primary:hover { transform: translateY(-1px); }
+
+.button.secondary {
+  background: var(--cesi-black);
+  color: var(--cesi-white);
+}
+
+.button.secondary:hover { transform: translateY(-1px); }
+
+/* Content sections */
+.section {
+  padding: 2.5rem 0;
+}
+
+.section h2 {
+  margin-top: 0;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.card h3 { margin-top: 0; }
+
+/* Footer */
+.site-footer {
+  background: #0a0a0a;
+  color: var(--cesi-white);
+  border-top: 4px solid var(--cesi-yellow);
+  margin-top: 2rem;
+}
+
+.site-footer .container {
+  padding: 1.25rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-footer a { color: var(--cesi-yellow); }
+
+/* Utilities */
+.lead { font-size: 1.125rem; color: var(--muted-text); }
+.m-0 { margin: 0; }
+.mt-1 { margin-top: .5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+
+/* Responsive tweaks */
+@media (max-width: 800px) {
+  .hero .container { grid-template-columns: 1fr; }
+}
+
+/* Corner logo positioned in the top-left of the header */
+.corner-logo {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Hide inline brand visuals to avoid duplicate logos */
+.brand-mark,
+.brand-logo {
+  display: none !important;
+}
+
+/* ===== CESI brand & readability tweaks (appended) ===== */
+:root {
+  --cesi-yellow: #ffd200;
+  --cesi-black: #000000;
+  --cesi-white: #ffffff;
+}
+
+/* Selection in CESI yellow */
+::-moz-selection {
+  background: var(--cesi-yellow);
+  color: var(--cesi-black);
+  text-shadow: none;
+}
+::selection {
+  background: var(--cesi-yellow);
+  color: var(--cesi-black);
+  text-shadow: none;
+}
+
+/* Links */
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 0.1em;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Focus outlines for accessibility */
+:focus-visible {
+  outline: 3px solid var(--cesi-yellow);
+  outline-offset: 2px;
+}
+
+/* Card accent */
+.card {
+  border-top: 4px solid var(--cesi-yellow);
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mécanique Project · Équipe</title>
+  <meta name="description" content="Présentation de l'équipe du projet Mécanique et des responsabilités de chacun.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="/img/favicon.ico" sizes="any">
+  <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icon.png">
+  <meta name="theme-color" content="#ffd200">
+</head>
+<body>
+  <header class="site-header">
+    <img class="corner-logo" src="img/CESI_Logo.png" alt="Logo CESI">
+    <div class="container topbar">
+      <a class="brand" href="index.html" aria-label="Mécanique Project">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Mécanique Project</span>
+      </a>
+    </div>
+    <div class="navbar">
+      <div class="container">
+        <nav aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="project.html">Projet</a>
+          <a href="team.html" aria-current="page">Équipe</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>L'équipe & les rôles</h1>
+        <p class="lead">Décrivez la composition de l'équipe, les rôles, et les responsabilités.</p>
+
+        <div class="grid-3 mt-3">
+          <article class="card">
+            <h3>Chef de projet</h3>
+            <p>Coordination, planning, suivi des risques, communication.</p>
+          </article>
+          <article class="card">
+            <h3>Responsable technique</h3>
+            <p>Architecture, choix techniques, qualité et intégration.</p>
+          </article>
+          <article class="card">
+            <h3>Conception / Mécanique</h3>
+            <p>Conception des pièces, plans, simulations, nomenclatures.</p>
+          </article>
+        </div>
+
+        <div class="grid-3 mt-3">
+          <article class="card">
+            <h3>Tests & validation</h3>
+            <p>Plan de test, protocoles, critères d'acceptation, rapports.</p>
+          </article>
+          <article class="card">
+            <h3>Documentation</h3>
+            <p>Rédaction de la documentation et mise à jour du présent site.</p>
+          </article>
+          <article class="card">
+            <h3>Parties prenantes</h3>
+            <p>Clients, utilisateurs, encadrants et partenaires clés.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="m-0">© <span id="year"></span> Mécanique Project</p>
+      <p class="m-0">Thème: CESI – jaune, noir et blanc</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
