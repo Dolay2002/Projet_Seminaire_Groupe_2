@@ -58,7 +58,7 @@ function initNavigation() {
         // Scroll vers le haut lors du changement de page
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
-        // Réinitialiser le graphique si on navigue vers la page données
+        // Réinitialiser le graphique si on navigue vers la page donnée
         if (pageId === 'donnees') {
             setTimeout(initChart, 100);
         }

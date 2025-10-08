@@ -108,12 +108,12 @@ body {
 }
 
 .nav-link:hover {
-    background-color: var(--cesi-gray-dark);
+    background-color: var(--cesi-gray-light);
     color: var(--cesi-yellow);
 }
 
 .nav-link.active {
-    background-color: var(--cesi-yellow);
+    background-color: var(--cesi-gray-light);
     color: var(--cesi-black);
 }
 
@@ -606,7 +606,7 @@ body {
 
 /* Footer */
 .footer {
-    background-color: var(--cesi-black);
+    background-color: var(--cesi-yellow);
     color: var(--cesi-white);
     padding: var(--spacing-lg) 0;
     margin-top: var(--spacing-xl);
@@ -622,7 +622,7 @@ body {
 
 .footer-info p {
     margin-bottom: var(--spacing-xs);
-    color: var(--cesi-gray-light);
+    color: var(--cesi-gray-dark);
 }
 
 .footer-logo .logo-placeholder {
