@@ -1,5 +1,7 @@
+/* CSS EXISTANT PRÉSERVÉ - Ajouts pour les boutons d'upload */
+
+/* Couleurs CESI */
 :root {
-    /* Couleurs CESI */
     --cesi-yellow: #FFCD00;
     --cesi-black: #000000;
     --cesi-white: #FFFFFF;
@@ -7,24 +9,20 @@
     --cesi-gray-light: #F5F5F5;
     --cesi-gray-medium: #666666;
 
-    /* Autres couleurs */
     --accent-blue: #2E5BFF;
     --success-green: #28A745;
     --warning-orange: #FD7E14;
     --danger-red: #DC3545;
 
-    /* Espacements */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
 
-    /* Bordures */
     --border-radius: 8px;
     --border-radius-lg: 12px;
 
-    /* Ombres */
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
     --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
     --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
@@ -75,17 +73,8 @@ body {
     gap: var(--spacing-sm);
 }
 
-.logo-placeholder {
-    background-color: var(--cesi-yellow);
-    color: var(--cesi-black);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--border-radius);
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
 .project-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--cesi-gray-dark);
 }
@@ -227,6 +216,7 @@ body {
 }
 
 /* Image placeholders */
+
 .image-placeholder, .diagram-placeholder {
     background-color: var(--cesi-gray-light);
     border: 2px dashed var(--cesi-gray-medium);
@@ -318,18 +308,59 @@ body {
     transform: translateY(-3px);
 }
 
+.member-photo {
+    margin-bottom: var(--spacing-md);
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--cesi-yellow);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+/* Photo de remplacement si l'image ne charge pas */
+.profile-photo[src=""],
+.profile-photo:not([src]) {
+    background-color: var(--cesi-gray-light);
+    position: relative;
+}
+
+.profile-photo[src=""]:after,
+.profile-photo:not([src]):after {
+    content: "Photo";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--cesi-gray-medium);
+    font-size: 0.9rem;
+}
+
+
 .member-photo-placeholder {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     background-color: var(--cesi-gray-light);
     border: 3px solid var(--cesi-yellow);
-    margin: 0 auto var(--spacing-md);
+    margin: 0 auto var(--spacing-sm);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--cesi-gray-medium);
     font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .team-member h3 {
@@ -499,6 +530,20 @@ body {
     color: var(--cesi-gray-medium);
 }
 
+.diagram-placeholder {
+    background-color: var(--cesi-gray-light);
+    border: 2px dashed var(--cesi-gray-medium);
+    padding: var(--spacing-lg);
+    text-align: center;
+    border-radius: var(--border-radius);
+    color: var(--cesi-gray-medium);
+    font-style: italic;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Tables */
 .table-container {
     overflow-x: auto;
@@ -625,11 +670,6 @@ body {
     color: var(--cesi-gray-dark);
 }
 
-.footer-logo .logo-placeholder {
-    background-color: var(--cesi-yellow);
-    color: var(--cesi-black);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     .header-content {
@@ -681,6 +721,10 @@ body {
         flex-direction: column;
         text-align: center;
     }
+
+    .project-title {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -716,77 +760,8 @@ body {
     .data-table td {
         padding: var(--spacing-xs);
     }
-}
 
-/* Utilitaires */
-.text-center {
-    text-align: center;
-}
-
-.text-left {
-    text-align: left;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.mb-0 { margin-bottom: 0; }
-.mb-sm { margin-bottom: var(--spacing-sm); }
-.mb-md { margin-bottom: var(--spacing-md); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
-
-.mt-0 { margin-top: 0; }
-.mt-sm { margin-top: var(--spacing-sm); }
-.mt-md { margin-top: var(--spacing-md); }
-.mt-lg { margin-top: var(--spacing-lg); }
-
-.font-weight-bold { font-weight: 700; }
-.font-weight-normal { font-weight: 400; }
-
-.color-yellow { color: var(--cesi-yellow); }
-.color-black { color: var(--cesi-black); }
-.color-gray { color: var(--cesi-gray-medium); }
-
-/* Accessibilité */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* Focus pour l'accessibilité */
-.nav-link:focus,
-.nav-card:focus {
-    outline: 3px solid var(--cesi-yellow);
-    outline-offset: 2px;
-}
-
-/* Print styles */
-@media print {
-    .header,
-    .footer,
-    .nav-cards {
-        display: none;
-    }
-
-    .page {
-        display: block !important;
-    }
-
-    .card {
-        break-inside: avoid;
-        box-shadow: none;
-        border: 1px solid var(--cesi-gray-medium);
-    }
-
-    .hero {
-        background: none !important;
-        border: 2px solid var(--cesi-black);
+    .project-title {
+        font-size: 1rem;
     }
 }

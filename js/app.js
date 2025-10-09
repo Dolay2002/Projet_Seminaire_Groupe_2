@@ -1,4 +1,5 @@
 // Application JavaScript pour le site de documentation du système de levage
+// Version simplifiée - photos statiques
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialisation de l'application
@@ -58,7 +59,7 @@ function initNavigation() {
         // Scroll vers le haut lors du changement de page
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
-        // Réinitialiser le graphique si on navigue vers la page donnée
+        // Réinitialiser le graphique si on navigue vers la page données
         if (pageId === 'donnees') {
             setTimeout(initChart, 100);
         }
@@ -123,7 +124,7 @@ function drawChart(ctx, canvas, data, theoretical, measured) {
     const padding = 60;
     const chartWidth = canvas.width - 2 * padding;
     const chartHeight = canvas.height - 2 * padding;
-    const barWidth = chartWidth / (data.labels.length * 3); // 3 pour l'espacement
+    const barWidth = chartWidth / (data.labels.length * 3);
 
     // Couleurs CESI
     const colors = {
@@ -249,100 +250,6 @@ function drawChart(ctx, canvas, data, theoretical, measured) {
 }
 
 /**
- * Gestion des animations au scroll (optionnel)
- */
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observer les cartes
-    document.querySelectorAll('.card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
-    });
-}
-
-/**
- * Gestion du mode sombre (optionnel pour future amélioration)
- */
-function initDarkMode() {
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    if (!darkModeToggle) return;
-
-    darkModeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-    });
-
-    // Restaurer le mode sombre
-    if (localStorage.getItem('darkMode') === 'true') {
-        document.body.classList.add('dark-mode');
-    }
-}
-
-/**
- * Validation des formulaires (pour futures extensions)
- */
-function initFormValidation() {
-    const forms = document.querySelectorAll('form');
-
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const formData = new FormData(form);
-            console.log('Données du formulaire:', Object.fromEntries(formData));
-
-            // Ici on pourrait ajouter la validation et l'envoi
-            alert('Fonctionnalité à implémenter');
-        });
-    });
-}
-
-/**
- * Gestion des erreurs globales
- */
-window.addEventListener('error', function(e) {
-    console.error('Erreur JavaScript:', e.error);
-
-    // En mode développement, afficher l'erreur
-    if (window.location.hostname === 'localhost') {
-        const errorDiv = document.createElement('div');
-        errorDiv.style.cssText = `
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: #ff4444;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 9999;
-            font-size: 12px;
-            max-width: 300px;
-        `;
-        errorDiv.textContent = `Erreur: ${e.error.message}`;
-        document.body.appendChild(errorDiv);
-
-        setTimeout(() => {
-            errorDiv.remove();
-        }, 5000);
-    }
-});
-
-/**
  * Fonctions utilitaires
  */
 const utils = {
@@ -398,11 +305,30 @@ window.addEventListener('resize', utils.debounce(function() {
     }
 }, 250));
 
-// Export des fonctions pour utilisation externe si nécessaire
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        initNavigation,
-        initChart,
-        utils
-    };
-}
+// Gestion des erreurs globales
+window.addEventListener('error', function(e) {
+    console.error('Erreur JavaScript:', e.error);
+
+    // En mode développement, afficher l'erreur
+    if (window.location.hostname === 'localhost') {
+        const errorDiv = document.createElement('div');
+        errorDiv.style.cssText = `
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #ff4444;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 9999;
+            font-size: 12px;
+            max-width: 300px;
+        `;
+        errorDiv.textContent = `Erreur: ${e.error.message}`;
+        document.body.appendChild(errorDiv);
+
+        setTimeout(() => {
+            errorDiv.remove();
+        }, 5000);
+    }
+});
