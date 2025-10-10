@@ -343,27 +343,56 @@
         <!-- Page principes -->
         <section id="principes" class="page">
             <div class="page-header">
-                <h1>Principes Mécaniques</h1>
-                <p>Comprendre les principes physiques qui régissent notre système de levage</p>
+                <h1>Principes Mécaniques de la grue</h1>
+                <p>Comprendre les principes physiques qui régissent notre grue</p>
             </div>
 
             <div class="principles-content">
                 <div class="principle-section">
-                    <h2>1. Principe du Levier</h2>
+                    <h2>1. Calculs Dynamique</h2>
                     <div class="principle-explanation">
                         <div class="text-content">
-                            <p>Le levier est une machine simple qui permet d'amplifier une force. Dans notre système de levage, nous utilisons le principe du levier pour réduire l'effort nécessaire au soulèvement.</p>
-                            <h4>Loi des leviers :</h4>
-                            <p>F₁ × d₁ = F₂ × d₂</p>
-                            <ul>
-                                <li><strong>F₁</strong> : Force appliquée</li>
-                                <li><strong>F₂</strong> : Force de charge</li>
-                                <li><strong>d₁</strong> : Distance au point d'appui côté effort</li>
-                                <li><strong>d₂</strong> : Distance au point d'appui côté charge</li>
-                            </ul>
-                        </div>
-                        <div class="diagram-placeholder">
-                            [Schéma du levier - À ajouter]
+                            <h4>Calcul déterminant la force de la personne nécessaire pour soulever la charge :</h4>
+
+                            <div class="calcul-section">
+                                <p><strong>Poids de la charge :</strong></p>
+                                <p>P = mg = <span class="fraction"><sup>300</sup>&frasl;<sub>10³</sub></span> × 10 = 3N</p>
+                            </div>
+
+                            <div class="calcul-section">
+                                <p><strong>Force maximale par poulie :</strong></p>
+                                <p>F<sub>max</sub>/P<sub>a</sub> = <span class="fraction"><sup>3</sup>&frasl;<sub>4</sub></span> = 0,75N</p>
+                            </div>
+
+                            <div class="calcul-section">
+                                <p><strong>Masse équivalente :</strong></p>
+                                <p>Masse = 750g de force</p>
+                            </div>
+
+                            <div class="calcul-section">
+                                <p><strong>Longueur de corde nécessaire :</strong></p>
+                                <p>Longueur de corde tirée = hauteur × nombre de poulies = 0,4m × 4 = 1,6m</p>
+                            </div>
+
+                            <div class="calcul-section">
+                                <p><strong>Calcul de la force opérateur :</strong></p>
+                                <p>C₀ = F₀ + Br, sachant que Br = 1,5</p>
+                                <p>∑<span class="vector">F</span> = 0</p>
+                                <p>⟺ -<span class="fraction"><sup>P</sup>&frasl;<sub>4</sub></span> + F₀ × Br = 0</p>
+                                <p>⟺ F₀ = <span class="fraction"><sup>P</sup>&frasl;<sub>4</sub></span> × <span class="fraction"><sup>1</sup>&frasl;<sub>Br</sub></span></p>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;= <span class="fraction"><sup>P</sup>&frasl;<sub>4Br</sub></span> = <span class="fraction"><sup>(300 × 9,81)</sup>&frasl;<sub>(4 × 1,5)</sub></span></p>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;= 490,5N</p>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;= 50 kg de force</p>
+                            </div>
+
+                            <div class="diagram-placeholder">
+                                <img src="img/Schema_grue_calcul_dynamique.png" alt="Schema_grue_calcul_dynamique" width="250" height="200">
+                            </div>
+
+                            <div class="conclusion-section">
+                                <h4>Conclusion</h4>
+                                <p><strong>L'ouvrier faisant fonctionner la grue devra avoir une force minimum de 50kg pour soulever la charge, ce qui est réalisable.</strong></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -384,46 +413,6 @@
                         </div>
                         <div class="diagram-placeholder">
                             [Schéma du système de poulies - À ajouter]
-                        </div>
-                    </div>
-                </div>
-
-                <div class="principle-section">
-                    <h2>3. Forces et Équilibre</h2>
-                    <div class="principle-explanation">
-                        <div class="text-content">
-                            <p>L'analyse des forces est cruciale pour garantir la stabilité et la sécurité du système de levage.</p>
-                            <h4>Équilibre statique :</h4>
-                            <ul>
-                                <li>Σ Forces horizontales = 0</li>
-                                <li>Σ Forces verticales = 0</li>
-                                <li>Σ Moments = 0</li>
-                            </ul>
-                            <h4>Facteur de sécurité :</h4>
-                            <p>FS = Charge de rupture / Charge de travail ≥ 4</p>
-                        </div>
-                        <div class="diagram-placeholder">
-                            [Diagramme des forces - À ajouter]
-                        </div>
-                    </div>
-                </div>
-
-                <div class="principle-section">
-                    <h2>4. Résistance des Matériaux</h2>
-                    <div class="principle-explanation">
-                        <div class="text-content">
-                            <p>Les matériaux doivent résister aux contraintes imposées par les charges de levage.</p>
-                            <h4>Types de contraintes :</h4>
-                            <ul>
-                                <li><strong>Traction :</strong> σ = F / S</li>
-                                <li><strong>Compression :</strong> σ = F / S</li>
-                                <li><strong>Cisaillement :</strong> τ = F / S</li>
-                                <li><strong>Flexion :</strong> σ = M × y / I</li>
-                            </ul>
-                            <p>Condition de résistance : σ ≤ σ_admissible</p>
-                        </div>
-                        <div class="diagram-placeholder">
-                            [Schémas des contraintes - À ajouter]
                         </div>
                     </div>
                 </div>
