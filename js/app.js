@@ -298,7 +298,7 @@ const utils = {
 
 // Gestion du redimensionnement de fenêtre
 window.addEventListener('resize', utils.debounce(function() {
-    // Redessiner le graphique si la page données est active
+    // Redessiner le graphique si la page donnée est active
     const dataPage = document.getElementById('donnees');
     if (dataPage && dataPage.classList.contains('active')) {
         setTimeout(initChart, 100);
