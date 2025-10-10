@@ -530,6 +530,95 @@ body {
     color: var(--cesi-gray-medium);
 }
 
+/* Styles pour les calculs dynamiques */
+.calcul-section {
+    background-color: var(--cesi-gray-light);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--cesi-yellow);
+}
+
+.calcul-section p {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.8;
+}
+
+.calcul-section strong {
+    color: var(--cesi-black);
+    font-weight: 600;
+}
+
+/* Styles pour les fractions */
+.fraction {
+    display: inline-block;
+    font-size: 1em;
+    vertical-align: middle;
+    margin: 0 0.2em;
+}
+
+.fraction sup,
+.fraction sub {
+    font-size: 0.8em;
+    line-height: 1;
+}
+
+.fraction sup {
+    vertical-align: super;
+}
+
+.fraction sub {
+    vertical-align: sub;
+}
+
+/* Styles pour les indices et exposants */
+sub, sup {
+    font-size: 0.8em;
+    line-height: 0;
+}
+
+/* Vecteurs */
+.vector {
+    position: relative;
+    display: inline-block;
+    font-style: italic;
+}
+
+.vector::after {
+    content: '→';
+    position: absolute;
+    top: -0.6em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75em;
+    line-height: 1;
+    color: var(--cesi-black);
+    font-weight: bold;
+}
+
+/* Section conclusion */
+.conclusion-section {
+    background-color: var(--cesi-yellow);
+    color: var(--cesi-black);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.conclusion-section h4 {
+    color: var(--cesi-black);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+}
+
+.conclusion-section p {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
 .diagram-placeholder {
     background-color: var(--cesi-gray-light);
     border: 2px dashed var(--cesi-gray-medium);
